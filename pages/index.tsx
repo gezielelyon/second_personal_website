@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 import dynamic from 'next/dynamic';
@@ -166,7 +166,7 @@ const Home: NextPage<IHomeProps> = ({ currentLanguage }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const currentLocale = locale !== undefined ? locale : 'pt';
 
   return {
