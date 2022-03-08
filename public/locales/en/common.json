@@ -1,1 +1,8 @@
-{"company_text":"current company","curriculum_text":"download resume","description_second_section":"I create experience through lines of code! I'm always studying and looking for new challenges, because in technology, evolution is always continuous and change is always present!","text_footer":"Created and maintained by","title_second_section":"Fullstack Web Developer","title_third_section":"Know more about me"}
+{
+  "company_text": "current company",
+  "curriculum_text": "download resume",
+  "description_second_section": "I create experience through lines of code! I'm always studying and looking for new challenges, because in technology the change is always present and evolution must be continuous!",
+  "text_footer": "Created and maintained by",
+  "title_second_section": "Software Engineer",
+  "title_third_section": "Know more about me"
+}
