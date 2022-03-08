@@ -53,7 +53,7 @@ export const lightTheme = createTheme({
 export const darkTheme = createTheme({
   colors: {
     primaryBackground: '#010101',
-    secondaryBackground: '#0A0A0A',
+    secondaryBackground: '#121214',
 
     primaryText: '#FBF9FB',
     secondaryText: '#fff',
