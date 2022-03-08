@@ -37,7 +37,7 @@ const Home: NextPage<IHomeProps> = ({ currentLanguage }) => {
   const { t } = useTranslation();
 
   const [currentThemeMode, setCurrentThemeMode] = useState<'light' | 'dark'>(
-    'dark',
+    'light',
   );
 
   return (
