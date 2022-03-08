@@ -12,6 +12,7 @@ const Header = dynamic<IHeaderProps>(() =>
 );
 
 import {
+  Container,
   MainContainerContent,
   FirstSection,
   FistSectionImageFigure,
@@ -25,6 +26,8 @@ import {
   ThirdListButton,
   ThirdButtonWithIcon,
 } from '@styles/Home/index';
+import { useState } from 'react';
+import { lightTheme, darkTheme } from '@styles/index';
 
 interface IHomeProps {
   currentLanguage: string;
@@ -33,136 +36,140 @@ interface IHomeProps {
 const Home: NextPage<IHomeProps> = ({ currentLanguage }) => {
   const { t } = useTranslation();
 
+  const [currentThemeMode, setCurrentThemeMode] = useState<'light' | 'dark'>(
+    'dark',
+  );
+
   return (
-    <>
+    <Container
+      className={currentThemeMode === 'light' ? lightTheme : darkTheme}
+    >
       <title>Geziel Elyon</title>
 
-      <Header currentLanguage={currentLanguage} />
+      <Header
+        currentLanguage={currentLanguage}
+        currentThemeMode={currentThemeMode}
+        setCurrentThemeMode={setCurrentThemeMode}
+      />
 
-      <div>
-        <MainContainerContent>
-          <FirstSection>
-            <DeveloperNameTitle>
-              Geziel Elyon <br /> Barbosa Costa
-            </DeveloperNameTitle>
+      <MainContainerContent>
+        <FirstSection>
+          <DeveloperNameTitle>
+            Geziel Elyon <br /> Barbosa Costa
+          </DeveloperNameTitle>
 
-            <FistSectionImageFigure>
-              <NextImage
-                src="/geziel.jpg"
-                height={150}
-                width={150}
-                title="Geziel Elyon"
-                alt="Image Geziel Elyon"
-              />
-            </FistSectionImageFigure>
-          </FirstSection>
+          <FistSectionImageFigure>
+            <NextImage
+              src="/geziel.jpg"
+              height={150}
+              width={150}
+              title="Geziel Elyon"
+              alt="Image Geziel Elyon"
+            />
+          </FistSectionImageFigure>
+        </FirstSection>
 
-          <SecondSection>
-            <SecondSectionTitle>
-              {t('common:title_second_section')} 🔥
-            </SecondSectionTitle>
-            <DescriptionText>
-              {t('common:description_second_section')}
-            </DescriptionText>
-          </SecondSection>
+        <SecondSection>
+          <SecondSectionTitle>
+            {t('common:title_second_section')} 🔥
+          </SecondSectionTitle>
+          <DescriptionText>
+            {t('common:description_second_section')}
+          </DescriptionText>
+        </SecondSection>
 
-          <ThirdSection>
-            <ThirdSectionTitle>
-              {t('common:title_third_section')} 👇
-            </ThirdSectionTitle>
+        <ThirdSection>
+          <ThirdSectionTitle>
+            {t('common:title_third_section')} 👇
+          </ThirdSectionTitle>
 
-            <ThirdListButton>
-              <ThirdButtonWithIcon>
-                <NextLink
-                  href="https://github.com/programador404"
-                  passHref
-                  prefetch={false}
-                >
-                  <a
-                    title="Github link"
-                    aria-label="Github link"
-                    target="_blank"
-                  >
-                    <h3>Github</h3>
-                    <span>🖥️</span>
-                  </a>
-                </NextLink>
-              </ThirdButtonWithIcon>
-              <ThirdButtonWithIcon>
-                <NextLink
-                  href="https://www.linkedin.com/in/geziel-elyon-a0a1381a5/"
-                  passHref
-                  prefetch={false}
-                >
-                  <a
-                    title="Linkedin link"
-                    aria-label="Linkedin link"
-                    target="_blank"
-                  >
-                    <h3>Linkedin</h3>
-                    <span>🤓</span>
-                  </a>
-                </NextLink>
-              </ThirdButtonWithIcon>
-              <ThirdButtonWithIcon>
-                <NextLink
-                  href="https://www.instagram.com/gezielelyon"
-                  passHref
-                  prefetch={false}
-                >
-                  <a
-                    title="Instagram link"
-                    aria-label="Instagram link"
-                    target="_blank"
-                  >
-                    <h3>Instagram</h3>
-                    <span>😎</span>
-                  </a>
-                </NextLink>
-              </ThirdButtonWithIcon>
-              <ThirdButtonWithIcon>
-                <NextLink
-                  href="https://maisretorno.com/"
-                  passHref
-                  prefetch={false}
-                >
-                  <a
-                    title="Empresa atual link"
-                    aria-label="Empresa atual link"
-                    target="_blank"
-                  >
-                    <h3>{t('common:company_text')}</h3>
-                    <span>👨‍💻</span>
-                  </a>
-                </NextLink>
-              </ThirdButtonWithIcon>
-              <ThirdButtonWithIcon>
-                <a
-                  href={
-                    currentLanguage === 'English'
-                      ? '/english-curriculum.pdf'
-                      : '/portuguese-curriculum.pdf'
-                  }
-                  title="Baixar currículo"
-                  aria-label="Baixar currículo"
-                  download
-                >
-                  <h3>{t('common:curriculum_text')}</h3>
-                  <span>💯</span>
+          <ThirdListButton>
+            <ThirdButtonWithIcon>
+              <NextLink
+                href="https://github.com/programador404"
+                passHref
+                prefetch={false}
+              >
+                <a title="Github link" aria-label="Github link" target="_blank">
+                  <h3>Github</h3>
+                  <span>🖥️</span>
                 </a>
-              </ThirdButtonWithIcon>
-            </ThirdListButton>
-          </ThirdSection>
-        </MainContainerContent>
+              </NextLink>
+            </ThirdButtonWithIcon>
+            <ThirdButtonWithIcon>
+              <NextLink
+                href="https://www.linkedin.com/in/geziel-elyon-a0a1381a5/"
+                passHref
+                prefetch={false}
+              >
+                <a
+                  title="Linkedin link"
+                  aria-label="Linkedin link"
+                  target="_blank"
+                >
+                  <h3>Linkedin</h3>
+                  <span>🤓</span>
+                </a>
+              </NextLink>
+            </ThirdButtonWithIcon>
+            <ThirdButtonWithIcon>
+              <NextLink
+                href="https://www.instagram.com/gezielelyon"
+                passHref
+                prefetch={false}
+              >
+                <a
+                  title="Instagram link"
+                  aria-label="Instagram link"
+                  target="_blank"
+                >
+                  <h3>Instagram</h3>
+                  <span>😎</span>
+                </a>
+              </NextLink>
+            </ThirdButtonWithIcon>
+            <ThirdButtonWithIcon>
+              <NextLink
+                href="https://maisretorno.com/"
+                passHref
+                prefetch={false}
+              >
+                <a
+                  title="Empresa atual link"
+                  aria-label="Empresa atual link"
+                  target="_blank"
+                >
+                  <h3>{t('common:company_text')}</h3>
+                  <span>👨‍💻</span>
+                </a>
+              </NextLink>
+            </ThirdButtonWithIcon>
+            <ThirdButtonWithIcon>
+              <a
+                href={
+                  currentLanguage === 'English'
+                    ? '/english-curriculum.pdf'
+                    : '/portuguese-curriculum.pdf'
+                }
+                title="Baixar currículo"
+                aria-label="Baixar currículo"
+                download
+              >
+                <h3>{t('common:curriculum_text')}</h3>
+                <span>💯</span>
+              </a>
+            </ThirdButtonWithIcon>
+          </ThirdListButton>
+        </ThirdSection>
+      </MainContainerContent>
 
-        <HomeFooter>
-          <span>
-            {t('common:text_footer')} <wbr />
-            <strong>Geziel Elyon</strong>
-          </span>
-        </HomeFooter>
-      </div>
-    </>
+      <HomeFooter>
+        <span>
+          {t('common:text_footer')} <wbr />
+          <strong>Geziel Elyon</strong>
+        </span>
+      </HomeFooter>
+    </Container>
   );
 };
 

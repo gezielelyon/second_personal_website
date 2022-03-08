@@ -1,13 +1,13 @@
 import { createStitches, ScaleValue } from "@stitches/react";
 
-export const { styled, getCssText, globalCss } = createStitches({
+export const { styled, getCssText, globalCss, createTheme } = createStitches({
   theme: {
     fonts: {
       default: 'Roboto'
     },
     colors: {
-      pureWhite: '#fff',
-      lightWhite: '#FBF9FB',
+      whiteLighter: '#fff',
+      whiteDarker: '#FBF9FB',
 
       blackLighter: '#0A0A0A',
       blackDarker: '#010101',
@@ -38,4 +38,24 @@ export const { styled, getCssText, globalCss } = createStitches({
       paddingBottom: value,
     }),
   },
+});
+
+export const lightTheme = createTheme({
+  colors: {
+    primaryBackground: '#FBF9FB',
+    secondaryBackground: '#fff',
+
+    primaryText: '#0A0A0A',
+    secondaryText: '#010101',
+  }
+});
+
+export const darkTheme = createTheme({
+  colors: {
+    primaryBackground: '#010101',
+    secondaryBackground: '#0A0A0A',
+
+    primaryText: '#FBF9FB',
+    secondaryText: '#fff',
+  }
 });

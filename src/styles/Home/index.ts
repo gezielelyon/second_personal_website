@@ -1,4 +1,9 @@
-import { styled } from '@styles/index';
+import { darkTheme, lightTheme, styled } from '@styles/index';
+
+export const Container = styled('div', {
+  flex: 1,
+  backgroundColor:  lightTheme ? lightTheme.colors.primaryBackground : darkTheme.colors.primaryBackground,
+})
 
 export const MainContainerContent = styled('main', {
   maxWidth: `640px`,
@@ -28,9 +33,10 @@ export const DeveloperNameTitle = styled('h1', {
   fontWeight: 700,
   transition: `all 0.3s ease`,
   cursor: `default`,
+  color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
 
   '&:hover': {
-    '-webkit-text-stroke': `1px #010101`,
+    '-webkit-text-stroke':  lightTheme ? `1px ${lightTheme.colors.primaryText}` : `1px ${darkTheme.colors.primaryText}` ,
     color: `transparent`,
   },
 
@@ -50,6 +56,7 @@ export const SecondSection = styled('section', {
 
 export const SecondSectionTitle = styled('h2', {
   fontWeight: 600,
+  color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
 
   '@media(max-width: 400px)': {
     fontSize: `20px`
@@ -59,6 +66,7 @@ export const SecondSectionTitle = styled('h2', {
 export const DescriptionText = styled('p', {
   fontSize: `19px`,
   fontWeight: 400,
+  color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
 
   marginTop: `$16`,
 
@@ -79,6 +87,7 @@ export const ThirdSection = styled('section', {
 export const ThirdSectionTitle = styled('h2', {
   fontWeight: 600,
   marginBottom: `$16`,
+  color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
 
   '@media(max-width: 400px)': {
     fontSize: `20px`
@@ -98,14 +107,15 @@ export const ThirdButtonWithIcon = styled('li', {
   height: `70px`,
   width: `100%`,
   borderRadius: `10px`,
+  backgroundColor: lightTheme ? lightTheme.colors.secondaryBackground : darkTheme.colors.secondaryBackground,
   boxShadow: `1px 1px 10px 1px #0000001A`,
   listStyle: `none`,
-  transition: `all 0.3s ease`,
-
+  transition: `transform 0.3s ease`,
+  
   '&:hover': {
     transform: `scale(1.03, 1.03)`
   },
-
+  
   'a': {
     display: `flex`,
     flexDirection: `row`,
@@ -118,9 +128,10 @@ export const ThirdButtonWithIcon = styled('li', {
     textDecoration: `none`,
     textTransform: `capitalize`,
     padding: `20px 22px`,
-
+    
     'h3': {
       fontSize: `17px`,
+      color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
 
       '@media(max-width: 400px)': {
         fontSize: `16px`,
@@ -142,6 +153,8 @@ export const HomeFooter = styled('footer', {
   display: `flex`,
   alignItems: `center`,
   justifyContent: `center`,
+
+  color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
 
   'span': {
     fontWeight: 400,

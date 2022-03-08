@@ -10,11 +10,4 @@ export const globalStyles = globalCss({
   'body, button': {
     fontFamily: `$default`,
   },
-  body: {
-    backgroundColor: `$lightWhite`,
-    color: `$blackDarker`,
-  },
-  'h1, h2, h3, h4, h5, h6': {
-    color: `$blackDarker`,
-  },
 });

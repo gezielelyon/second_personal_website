@@ -1,6 +1,7 @@
 import { styled, keyframes } from '@stitches/react';
 import { violet, mauve } from '@radix-ui/colors';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import { lightTheme, darkTheme } from '@styles/index'
 
 const slideUpAndFade = keyframes({
   '0%': { opacity: 0, transform: 'translateY(2px)' },
@@ -24,9 +25,9 @@ const slideLeftAndFade = keyframes({
 
 export const StyledContent = styled(DropdownMenuPrimitive.Content, {
   minWidth: 150,
-  backgroundColor: 'white',
+  backgroundColor:  lightTheme ? lightTheme.colors.primaryBackground : darkTheme.colors.primaryBackground,
+  color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
   borderRadius: 5,
-  padding: 5,
   boxShadow:
     '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
   '@media (prefers-reduced-motion: no-preference)': {
@@ -46,15 +47,18 @@ const itemStyles = {
   all: 'unset',
   fontSize: 13,
   lineHeight: 1,
-  color: violet.violet11,
   borderRadius: 3,
   display: 'flex',
   alignItems: 'center',
   height: 25,
-  padding: '0 5px',
+  padding: '7px 5px',
   position: 'relative',
   paddingLeft: 25,
   userSelect: 'none',
+  backgroundColor:  lightTheme ? lightTheme.colors.secondaryBackground : darkTheme.colors.secondaryBackground,
+  color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
+  outline: 0,
+  border: 0,
 
   '&[data-disabled]': {
     color: mauve.mauve8,
@@ -62,8 +66,8 @@ const itemStyles = {
   },
 
   '&:focus': {
-    backgroundColor: violet.violet9,
-    color: violet.violet1,
+    backgroundColor:  lightTheme ? lightTheme.colors.primaryBackground : darkTheme.colors.primaryBackground,
+    color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
   },
 };
 
@@ -71,16 +75,12 @@ const StyledRadioItem = styled(DropdownMenuPrimitive.RadioItem, {
   ...itemStyles,
 });
 
-const StyledArrow = styled(DropdownMenuPrimitive.Arrow, {
-  fill: 'white',
-});
 
 // Exports
 export const DropdownMenu = DropdownMenuPrimitive.Root;
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 export const DropdownMenuContent = StyledContent;
 export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
-export const DropdownMenuArrow = StyledArrow;
 
 export const Box = styled('div', {});
 
@@ -89,23 +89,23 @@ export const IconButton = styled('button', {
   alignItems: 'center',
   justifyContent: 'center',
 
-  color: `$blackDarker`,
+  color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
   fontWeight: 700,
   fontSize: `14px`,
 
-  backgroundColor: 'white',
+  backgroundColor:  lightTheme ? lightTheme.colors.secondaryBackground : darkTheme.colors.secondaryBackground,
   cursor: `pointer`,
   border: 0,
   outline: 0,
 });
 
 export const DropdownMenuRadioItem = styled(StyledRadioItem, {
-  color: `$blackDarker`,
+  color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
   fontSize: `14px`,
 
   padding: `$4 10px`,
 
   '&:hover': {
-    backgroundColor: `$blackDarker`,
+    backgroundColor:  lightTheme ? darkTheme.colors.primaryBackground : lightTheme.colors.primaryBackground,
   },
 });

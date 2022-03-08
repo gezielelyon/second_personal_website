@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 
 import { IoIosArrowDown } from 'react-icons/io';
 
+import { darkTheme, lightTheme } from '@styles/index';
+
 import {
   Box,
   DropdownMenu,
@@ -11,14 +13,17 @@ import {
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-  DropdownMenuArrow,
 } from './styles';
 
 export interface IDropdownMenuProps {
   currentLanguage: string;
+  currentThemeMode: 'light' | 'dark';
 }
 
-export const DropdownMenuDemo = ({ currentLanguage }: IDropdownMenuProps) => {
+export const DropdownMenuDemo = ({
+  currentLanguage,
+  currentThemeMode,
+}: IDropdownMenuProps) => {
   const router = useRouter();
 
   const [language, setLanguage] = useState(currentLanguage);
@@ -41,13 +46,16 @@ export const DropdownMenuDemo = ({ currentLanguage }: IDropdownMenuProps) => {
             {language}
             <IoIosArrowDown
               size={18}
-              color="#010101"
+              color={currentThemeMode === 'light' ? '#010101' : '#fff'}
               style={{ marginLeft: 5 }}
             />
           </IconButton>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent sideOffset={5}>
+        <DropdownMenuContent
+          className={currentThemeMode === 'light' ? lightTheme : darkTheme}
+          sideOffset={5}
+        >
           <DropdownMenuRadioGroup
             value={language}
             onValueChange={handleChangeLanguage}
@@ -59,7 +67,6 @@ export const DropdownMenuDemo = ({ currentLanguage }: IDropdownMenuProps) => {
               {currentLanguage === 'Português' ? currentLanguage : 'Portuguese'}
             </DropdownMenuRadioItem>
           </DropdownMenuRadioGroup>
-          <DropdownMenuArrow />
         </DropdownMenuContent>
       </DropdownMenu>
     </Box>

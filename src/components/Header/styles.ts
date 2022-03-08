@@ -1,10 +1,10 @@
-import { styled } from '@styles/index';
+import { darkTheme, lightTheme, styled } from '@styles/index';
 
 export const Container = styled('header', {
   height: `70px`,
   width: `100%`,
 
-  backgroundColor: `$pureWhite`,
+  backgroundColor: lightTheme ? lightTheme.colors.secondaryBackground : darkTheme.colors.secondaryBackground,
   boxShadow: `0px 1px 10px 0px #0000000D`,
 
   position: `fixed`,
@@ -25,7 +25,7 @@ export const MainContent = styled('div', {
 
   paddingLeft: `$16`,
   paddingRight: `$16`,
-})
+});
 
 export const ThemeModeIcon = styled('button', {
   display: `flex`,
@@ -36,4 +36,11 @@ export const ThemeModeIcon = styled('button', {
   border: 0,
   cursor: `pointer`,
   background: `transparent`
-})
+});
+
+export const ChangeThemeButton = styled('button', {
+  background: `transparent`,
+  border: 0,
+  outline: 0,
+  cursor: `pointer`
+}) 
