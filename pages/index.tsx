@@ -44,14 +44,12 @@ const Home: NextPage<IHomeProps> = ({ currentLanguage }) => {
   return (
     <>
       <NextSeo
-        title="Geziel Elyon software engineer website"
+        title="Geziel Elyon"
         description="This is the Geziel Elyon software engineer website and contain some important link."
       />
       <Container
         className={currentThemeMode === 'light' ? lightTheme : darkTheme}
       >
-        <title>Geziel Elyon</title>
-
         <Header
           currentLanguage={currentLanguage}
           currentThemeMode={currentThemeMode}
