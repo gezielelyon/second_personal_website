@@ -161,7 +161,7 @@ export const HomeFooter = styled('footer', {
     opacity: 0.6,
     
     'strong': {
-      fontWeight: 900,
+      fontWeight: 700,
     }
   },
 });
