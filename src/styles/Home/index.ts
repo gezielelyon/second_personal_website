@@ -3,46 +3,14 @@ import { darkTheme, lightTheme, styled } from '@styles/index';
 export const Container = styled('div', {
   flex: 1,
   backgroundColor:  lightTheme ? lightTheme.colors.primaryBackground : darkTheme.colors.primaryBackground,
+  minHeight: '100vh',
+  height: '100%',
 })
 
 export const MainContainerContent = styled('main', {
-  maxWidth: `640px`,
+  maxWidth: `650px`,
   margin: `0 auto`,
   padding: `130px $16 $16 $16`,
-});
-
-export const FirstSection = styled('section', {
-  display: `flex`,
-  flexDirection: `row`,
-  alignItems: `center`,
-  justifyContent: `space-between`,
-
-  gap: `10px`
-});
-
-export const FistSectionImageFigure = styled('figure', {
-  'img': {
-    borderRadius: `999px`,
-    height: `150px`,
-    width: `150px`,
-  }
-});
-
-export const DeveloperNameTitle = styled('h1', {
-  fontSize: `30px`,
-  fontWeight: 700,
-  transition: `all 0.3s ease`,
-  cursor: `default`,
-  color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
-
-  '&:hover': {
-    '-webkit-text-stroke':  lightTheme ? `1px ${lightTheme.colors.primaryText}` : `1px ${darkTheme.colors.primaryText}` ,
-    color: `transparent`,
-  },
-
-  '@media(max-width: 400px)': {
-    fontSize: `24px`
-  }
 });
 
 export const SecondSection = styled('section', {
@@ -50,15 +18,19 @@ export const SecondSection = styled('section', {
   flexDirection: `column`,
   alignItems: `flex-start`,
 
-  marginTop: `$64`,
-  gap: `10px`
+  marginTop: `$32`,
+  gap: `10px`,
+  
+  '@media(max-width: 500px)': {
+    marginTop: 0
+  }
 });
 
 export const SecondSectionTitle = styled('h2', {
   fontWeight: 600,
   color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
 
-  '@media(max-width: 400px)': {
+  '@media(max-width: 500px)': {
     fontSize: `20px`
   }
 });
@@ -70,7 +42,7 @@ export const DescriptionText = styled('p', {
 
   marginTop: `$16`,
 
-  '@media(max-width: 400px)': {
+  '@media(max-width: 500px)': {
     fontSize: `16px`
   }
 });
@@ -80,8 +52,12 @@ export const ThirdSection = styled('section', {
   flexDirection: `column`,
   alignItems: `flex-start`,
 
-  marginTop: `$64`,
-  gap: `10px`
+  marginTop: `$72`,
+  gap: `10px`,
+  
+  '@media(max-width: 500px)': {
+    marginTop: `$48`,
+  }
 });
 
 export const ThirdSectionTitle = styled('h2', {
@@ -89,7 +65,7 @@ export const ThirdSectionTitle = styled('h2', {
   marginBottom: `$16`,
   color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
 
-  '@media(max-width: 400px)': {
+  '@media(max-width: 500px)': {
     fontSize: `20px`
   }
 });
@@ -133,7 +109,7 @@ export const ThirdButtonWithIcon = styled('li', {
       fontSize: `17px`,
       color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
 
-      '@media(max-width: 400px)': {
+      '@media(max-width: 500px)': {
         fontSize: `16px`,
       }
     },
@@ -146,15 +122,16 @@ export const ThirdButtonWithIcon = styled('li', {
 });
 
 export const HomeFooter = styled('footer', {
-  maxWidth: `640px`,
+  maxWidth: `650px`,
   margin: `0 auto`,
-  padding: `$16 $16 $32 $16`,
+  padding: `$40 $16`,
 
   display: `flex`,
   alignItems: `center`,
   justifyContent: `center`,
 
   color:  lightTheme ? lightTheme.colors.primaryText : darkTheme.colors.primaryText,
+  textAlign: `center`,
 
   'span': {
     fontWeight: 400,
@@ -164,4 +141,8 @@ export const HomeFooter = styled('footer', {
       fontWeight: 700,
     }
   },
+
+  '@media(max-width: 500px)': {
+    padding: `$32 $16`,
+  }
 });

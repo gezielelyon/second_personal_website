@@ -9,8 +9,8 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
       whiteLighter: '#fff',
       whiteDarker: '#FBF9FB',
 
-      blackLighter: '#0A0A0A',
-      blackDarker: '#010101',
+      blackLighter: '#121214',
+      blackDarker: '#08070B',
     },
     space: {
       '0': `0px`,
@@ -21,7 +21,12 @@ export const { styled, getCssText, globalCss, createTheme } = createStitches({
       '16': `1rem`,
       '24': `1.5rem`,
       '32': `2rem`,
+      '40': `2.5rem`,
+      '48': `3rem`,
       '64': `4rem`,
+      '72': `4.5rem`,
+      '80': `5rem`,
+      '96': `6rem`,
     },
     radii: {
       full: `99999px`,

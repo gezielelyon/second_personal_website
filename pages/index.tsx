@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import type { GetStaticProps, NextPage } from 'next';
-import NextImage from 'next/image';
 import NextLink from 'next/link';
 import dynamic from 'next/dynamic';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -13,9 +12,6 @@ import { lightTheme, darkTheme } from '@styles/index';
 import {
   Container,
   MainContainerContent,
-  FirstSection,
-  FistSectionImageFigure,
-  DeveloperNameTitle,
   SecondSection,
   SecondSectionTitle,
   DescriptionText,
@@ -57,22 +53,6 @@ const Home: NextPage<IHomeProps> = ({ currentLanguage }) => {
         />
 
         <MainContainerContent>
-          <FirstSection>
-            <DeveloperNameTitle>
-              Geziel Elyon <br /> Barbosa Costa
-            </DeveloperNameTitle>
-
-            <FistSectionImageFigure>
-              <NextImage
-                src="/geziel.jpg"
-                height={150}
-                width={150}
-                title="Geziel Elyon"
-                alt="Image Geziel Elyon"
-              />
-            </FistSectionImageFigure>
-          </FirstSection>
-
           <SecondSection>
             <SecondSectionTitle>
               {t('common:title_second_section')} 🔥
@@ -90,22 +70,6 @@ const Home: NextPage<IHomeProps> = ({ currentLanguage }) => {
             <ThirdListButton>
               <ThirdButtonWithIcon>
                 <NextLink
-                  href="https://github.com/programador404"
-                  passHref
-                  prefetch={false}
-                >
-                  <a
-                    title="Github link"
-                    aria-label="Github link"
-                    target="_blank"
-                  >
-                    <h3>Github</h3>
-                    <span>🖥️</span>
-                  </a>
-                </NextLink>
-              </ThirdButtonWithIcon>
-              <ThirdButtonWithIcon>
-                <NextLink
                   href="https://www.linkedin.com/in/geziel-elyon-a0a1381a5/"
                   passHref
                   prefetch={false}
@@ -117,6 +81,22 @@ const Home: NextPage<IHomeProps> = ({ currentLanguage }) => {
                   >
                     <h3>Linkedin</h3>
                     <span>🤓</span>
+                  </a>
+                </NextLink>
+              </ThirdButtonWithIcon>
+              <ThirdButtonWithIcon>
+                <NextLink
+                  href="https://github.com/programador404"
+                  passHref
+                  prefetch={false}
+                >
+                  <a
+                    title="Github link"
+                    aria-label="Github link"
+                    target="_blank"
+                  >
+                    <h3>Github</h3>
+                    <span>🖥️</span>
                   </a>
                 </NextLink>
               </ThirdButtonWithIcon>
@@ -137,11 +117,7 @@ const Home: NextPage<IHomeProps> = ({ currentLanguage }) => {
                 </NextLink>
               </ThirdButtonWithIcon>
               <ThirdButtonWithIcon>
-                <NextLink
-                  href="https://maisretorno.com/"
-                  passHref
-                  prefetch={false}
-                >
+                <NextLink href="https://pagar.me/" passHref prefetch={false}>
                   <a
                     title="Empresa atual link"
                     aria-label="Empresa atual link"
@@ -174,7 +150,6 @@ const Home: NextPage<IHomeProps> = ({ currentLanguage }) => {
         <HomeFooter>
           <span>
             {t('common:text_footer')} <wbr />
-            <strong>Geziel Elyon</strong>
           </span>
         </HomeFooter>
       </Container>
